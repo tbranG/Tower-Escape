@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags: []
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Traps
+  - Targets
+  - Player
+  - Scenario
+  - Bullets
+  - Boundary
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 3082113367
+    locked: 0
+  - name: Objects
+    uniqueID: 1855148803
+    locked: 0
+  - name: Actors
+    uniqueID: 2103492667
+    locked: 0
+  - name: Foreground
+    uniqueID: 128639453
+    locked: 0
