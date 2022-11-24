@@ -23,6 +23,7 @@ public class BridgeObj : MonoBehaviour
         GetComponentInChildren<SpriteRenderer>().enabled = false;
         GetComponent<Collider2D>().enabled = false;
         GetComponentInChildren<ParticleSystem>().Play();
+        GetComponentInChildren<AudioSource>().Play();
 
         yield return new WaitForSeconds(1f);
         gameObject.SetActive(false);

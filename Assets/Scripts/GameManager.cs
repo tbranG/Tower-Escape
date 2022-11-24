@@ -86,10 +86,10 @@ public class GameManager : MonoBehaviour
         }
 
         //quit
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Application.Quit();
-        }
+        //if (Input.GetKeyDown(KeyCode.Escape))
+        //{
+        //    Application.Quit();
+        //}
     }
 
     private void FixedUpdate()

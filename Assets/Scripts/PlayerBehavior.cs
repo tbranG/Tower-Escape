@@ -25,6 +25,8 @@ public class PlayerBehavior : MonoBehaviour
     [SerializeField] private GameObject bullet;
     [SerializeField] private GameObject blood;
     [SerializeField] private ParticleSystem smoke;
+    [SerializeField] private AudioSource canonSound;
+    [SerializeField] private AudioSource reloadSound;
     private Rigidbody2D body;
     private Animator anim;
 
@@ -114,10 +116,12 @@ public class PlayerBehavior : MonoBehaviour
     {
         reloading = true;
         anim.SetBool("Reloading", reloading);
+        reloadSound.Play();
         yield return new WaitForSeconds(3f);
         reloading = false;
         anim.SetBool("Reloading", reloading);
         ammo = 4;
+        reloadSound.Pause();
         OnGunReloaded?.Invoke();
     }
 
@@ -129,6 +133,7 @@ public class PlayerBehavior : MonoBehaviour
         //animation
         anim.SetTrigger("Shoot");
         smoke.Play();
+        canonSound.Play();
 
         GameObject b = magazine[current_bullet];
         BulletBehavior behavior = b.GetComponent<BulletBehavior>();
@@ -187,7 +192,13 @@ public class PlayerBehavior : MonoBehaviour
         isDead = true;
 
         OnPlayerDeath?.Invoke();
-        gameObject.SetActive(false);
+        
+        gameObject.GetComponent<Collider2D>().enabled = false;
+        SpriteRenderer[] childs = gameObject.transform.GetComponentsInChildren<SpriteRenderer>();
+        foreach(SpriteRenderer spr in childs)
+        {
+            spr.enabled = false;
+        }
     }
 
     private void FixedUpdate()
